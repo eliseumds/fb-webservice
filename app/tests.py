@@ -45,6 +45,12 @@ class PersonTest(AsyncHTTPTestCase):
         assert response.code == 200
         assert len(simplejson.loads(response.body)) == 2
 
+    def test_3_listing_with_limit(self):
+        self.http_client.fetch(self.get_url('/person?limit=1'), self.stop)
+        response = self.wait()
+        assert response.code == 200
+        assert len(simplejson.loads(response.body)) == 1
+
     def test_4_already_created(self):
         self.http_client.fetch(self.get_url('/person'), self.stop,
                                method='POST',
