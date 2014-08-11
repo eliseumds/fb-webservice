@@ -1,0 +1,6 @@
+coverage
+ipdb
+ipython
+peewee
+simplejson
+tornado
