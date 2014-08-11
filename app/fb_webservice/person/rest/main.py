@@ -49,10 +49,7 @@ class Handler(tornado.web.RequestHandler):
             pass
 
         Person.create(id=data['id'],
-                      first_name=data['first_name'],
-                      last_name=data['last_name'],
                       gender=data['gender'],
-                      locale=data['locale'],
                       name=data['name'],
                       username=data['username'])
         return True
